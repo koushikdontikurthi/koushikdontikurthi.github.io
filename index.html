@@ -404,6 +404,28 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
         </ul>
       </a>
 
+      <a class="pcard" href="https://github.com/koushikdontikurthi/transaction-processor-dotnet" target="_blank" rel="noopener">
+        <div class="pcard-top">
+          <div>
+            <div class="pcard-title">Transaction Processor <span class="pcard-arrow">↗</span></div>
+            <div class="pcard-stack">C# · .NET 10 · System.Text.Json</div>
+          </div>
+          <div class="pcard-period">Sep 2026</div>
+        </div>
+        <div class="pcard-tag">Console app that validates a batch of transactions and reports outcomes</div>
+        <div class="metrics">
+          <div class="metric"><b>3-tier</b>success / invalid / failed</div>
+          <div class="metric"><b>Per-record</b>try/catch isolation</div>
+          <div class="metric"><b>7</b>sample scenarios covered</div>
+        </div>
+        <ul>
+          <li>Reads a batch of transactions from JSON, validates each record, and simulates sending it to an API</li>
+          <li>Parses with JsonDocument first, then deserializes record-by-record so one bad record can't sink the whole batch</li>
+          <li>Separates invalid records (bad data) from failed ones (API problem) since each needs a different fix on retry</li>
+          <li>Deterministic mock API and exit codes (0/1/2) make results and CI behavior fully repeatable</li>
+        </ul>
+      </a>
+
     </div>
   </div>
 </section>
@@ -419,7 +441,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
       <div class="skill-cat">
         <h4>Languages</h4>
         <div class="chip-row">
-          <span class="chip">C++</span><span class="chip">C</span><span class="chip">Python</span>
+          <span class="chip">C++</span><span class="chip">C</span><span class="chip">C#</span><span class="chip">Python</span>
           <span class="chip">JavaScript</span><span class="chip">SQL</span>
         </div>
       </div>
@@ -647,6 +669,7 @@ const commands = {
       "1. Low-Latency Matching Engine — C++17, p50 115ns / p99 294ns",
       "2. Scalable Job Application Backend — Node.js + PostgreSQL",
       "3. Thread-Safe LRU Cache — C++, std::mutex",
+      "4. Transaction Processor — C#/.NET 10, batch validation",
       "→ scrolling to projects…",
     ];
   },
@@ -758,16 +781,18 @@ function mountInput(container) {
 const flameData = [
   [ { w: 100, c: '#ff8a3d', label: 'career::run()' } ],
   [
-    { w: 34, c: '#ff9a52', label: 'systems::c_plus_plus' },
-    { w: 30, c: '#ffb46a', label: 'backend::node_postgres' },
-    { w: 20, c: '#ff7a29', label: 'data::python_automation' },
-    { w: 16, c: '#ffc98a', label: 'infra::linux_docker' },
+    { w: 30, c: '#ff9a52', label: 'systems::c_plus_plus' },
+    { w: 24, c: '#ffb46a', label: 'backend::node_postgres' },
+    { w: 18, c: '#ffae70', label: 'systems::csharp_dotnet' },
+    { w: 16, c: '#ff7a29', label: 'data::python_automation' },
+    { w: 12, c: '#ffc98a', label: 'infra::linux_docker' },
   ],
   [
-    { w: 18, c: '#ffa25f', label: 'matching_engine' },
-    { w: 16, c: '#ff8a3d', label: 'lru_cache' },
-    { w: 30, c: '#ffb46a', label: 'job_api::express' },
-    { w: 20, c: '#ff7a29', label: 'runbooks::automation' },
+    { w: 16, c: '#ffa25f', label: 'matching_engine' },
+    { w: 14, c: '#ff8a3d', label: 'lru_cache' },
+    { w: 22, c: '#ffb46a', label: 'job_api::express' },
+    { w: 14, c: '#ffb98a', label: 'transaction_processor' },
+    { w: 18, c: '#ff7a29', label: 'runbooks::automation' },
     { w: 16, c: '#ffc98a', label: 'endpoint_monitoring' },
   ],
   [
@@ -777,8 +802,9 @@ const flameData = [
     { w: 16, c: '#ffcfa8', label: 'evict::mutex', title: 'evict::mutex — LRU cache eviction under lock' },
     { w: 15, c: '#ffd9b8', label: 'jwt_bcrypt', title: 'auth::jwt_bcrypt — job backend auth' },
     { w: 15, c: '#ffcfa8', label: 'cache::ttl', title: 'cache::ttl — 77x speedup on cache hit' },
-    { w: 20, c: '#ffb98a', label: 'pipelines −30%', title: 'python::pipelines — 30% less manual effort' },
-    { w: 16, c: '#ffcfa8', label: 'alerting', title: 'alerting — 99% uptime across 200+ endpoints' },
+    { w: 16, c: '#ffb98a', label: 'pipelines −30%', title: 'python::pipelines — 30% less manual effort' },
+    { w: 10, c: '#ffddb0', label: 'per_record_try', title: 'per-record try/catch — one bad record can\'t sink the batch' },
+    { w: 10, c: '#ffcfa8', label: 'alerting', title: 'alerting — 99% uptime across 200+ endpoints' },
   ],
 ];
 
